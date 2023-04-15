@@ -1,11 +1,30 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from "next/font/google"
+import { Image as DatoCMSImage } from "react-datocms";
+import { getAddresses, getPositionPaths, getServices, getArticles } from '@/lib/datocms'
 import styles from '@/styles/Home.module.css'
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export async function getStaticProps() {
+  const articles = await getArticles()
+  const services = await getServices()
+  const addresses = await getAddresses()
+  const positions = await getPositionPaths()
+
+  return {
+    props: { articles, services, addresses, positions },
+  }
+}
+
+export default function Home({ articles, services, addresses, positions }) {
+  console.log('articles', articles)
+  console.log('services', services)
+  console.log('addresses', addresses)
+  console.log('positions', positions)
+
   return (
     <>
       <Head>
@@ -117,6 +136,27 @@ export default function Home() {
             </p>
           </a>
         </div>
+
+        {/* //TODO услуги */}
+        {services.map(x =>
+          <DatoCMSImage key={x.id} data={x.picture.responsiveImage} />)}
+
+        {/* //TODO адреса*/}
+        {addresses.map(x =>
+          <DatoCMSImage key={x.id} data={x.picture.responsiveImage} />)}
+
+        {/* //TODO вакансии*/}
+        {positions.map(({ positionSlug, positionName }) =>
+          <Link key={positionSlug} href={`positions/${positionSlug}`}>
+            {positionName}
+          </Link>)}
+
+        {/* //TODO новости*/}
+        {articles.map(({ slug, title }) =>
+          <Link key={slug} href={`articles/${slug}`}>
+            {title}
+          </Link>)}
+
       </main>
     </>
   )
