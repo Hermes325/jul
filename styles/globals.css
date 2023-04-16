@@ -66,12 +66,14 @@ h2 {
 .padding_top4 {
   padding: 4% 7% 0 7%;
 }
-.m_auto{
+
+.m_auto {
   margin-right: auto;
-  margin-left: auto;
+  margin-left : auto;
 }
-.mr50{
-margin-right: 50px;
+
+.mr50 {
+  margin-right: 50px;
 }
 
 /* Расположени */
@@ -79,6 +81,7 @@ margin-right: 50px;
 .flex_center {
   display        : flex;
   justify-content: center;
+  align-items    : center;
 }
 
 .flex_between {
@@ -109,12 +112,20 @@ margin-right: 50px;
   width: 25%;
 }
 
-.w28{
+.w28 {
   width: 28%;
 }
 
 .w40 {
   width: 40%;
+}
+
+.w42 {
+  width: 42%;
+}
+
+.w67 {
+  width: 67%;
 }
 
 
@@ -161,5 +172,13 @@ hr {
   background-position: center;
   background-repeat  : no-repeat;
   height             : 560px;
-  width: 560px;
+  width              : 560px;
+}
+
+.desc {
+  font-family: 'TildaSans', Arial, sans-serif;
+  font-weight: 300;
+  color      : #000000;
+  font-size  : 20px;
+  line-height: 1.55;
 }
