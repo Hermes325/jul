@@ -5,19 +5,17 @@ import {
     ModalOverlay,
     ModalContent,
     ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
     Heading,
     Text,
     Button,
     VStack,
-    InputGroup,
-    InputLeftElement,
     FormControl,
     FormLabel,
     Input
 } from '@chakra-ui/react'
+import emailjs from "@emailjs/browser"
 import styles from "./invite.module.css"
 
 
