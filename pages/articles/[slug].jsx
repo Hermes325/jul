@@ -7,10 +7,15 @@ export default function Article({ article }) {
 
   console.log('Article >>', article)
   return <>
-    <main>
-      <h1>{article.title}</h1>
-      <DatoCMSImage data={article.mainPicture.responsiveImage} />
-      <StructuredText data={article.articleText} />
+    <main className='m_20'>
+      <h2 className='margin_bot5'>{article.title}</h2>
+      <div className={'w50 '}>
+        <DatoCMSImage data={article.mainPicture.responsiveImage} />
+      </div>
+      <div className='w50'>
+        <StructuredText data={article.articleText} />
+      </div>
+
     </main>
   </>
 }

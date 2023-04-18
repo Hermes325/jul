@@ -7,7 +7,7 @@ export default function Position({ position }) {
 
   console.log('Position >>', position)
   return (<main>
-    <h1>{position.positionName}</h1>
+    <h1 className='black'>{position.positionName}</h1>
     <StructuredText data={position.positionDescription} />
   </main>)
 }

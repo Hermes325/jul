@@ -4,8 +4,23 @@ import { Inter } from "next/font/google"
 import { Image as DatoCMSImage } from "react-datocms";
 import { getAddresses, getPositionPaths, getServices, getArticles } from '@/lib/datocms'
 import styles from '@/styles/Home.module.css'
+import Header from '@/components/header';
+import Link from 'next/link';
+import Slide1 from '@/components/slide1';
+import Slide2 from '@/components/slide2';
+import Slide3 from '@/components/slide3';
+import Slide4 from '@/components/slide4';
+import Slide5 from '@/components/slide5';
+import Invite from '@/components/invite';
+
+import Footer from '@/components/footer';
+
+
+
 
 const inter = Inter({ subsets: ['latin'] })
+
+
 
 export async function getStaticProps() {
   const articles = await getArticles()
@@ -33,65 +48,163 @@ export default function Home({ articles, services, addresses, positions }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <main>
+        <Slide1 />
+        <Slide2 />
+        <Slide3 />
+        <Slide4 />
+        {/* <Slide5 /> */}
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+        {/* //TODO адреса*/}
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+        {/* <section className="flex_center margin_top15 flex_colom BC" style={{ overflow: 'hidden' }}>
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
+          <h2 className="text_center">
+            Наши адреса
+          </h2>
+          <h4>
+            Мы успешно обслуживаем жилые помещения по следующим адресам:
+          </h4>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+          <div className={"grid grid_service"}>
+
+            <div>
+              {addresses.map(x =>
+                <DatoCMSImage
+                  key={x.id}
+                  data={x.picture.responsiveImage}
+
+                />)}
+            </div>
+
+
+            {addresses.map((x) =>
+
+              <div className="flex_service">
+                <div>
+                  фото
+                </div>
+                <div className="pl_5">
+                  <h3>
+                    {x.address}
+                  </h3>
+                  <p>
+                    {x.description}
+                  </p>
+                </div>
+
+              </div>
+
+            )}
+
+
+
+          </div>
+
+        </section> */}
+
+
+        {/* //TODO новости*/}
+        <section className="flex_center  flex_colom BC">
+          <h2 className="text_center margin_top5">
+            Новости организации
+          </h2>
+          <h4 className={"text_center w45"}>
+            Мы за постоянное улучшение качества жилищных условий наших объектов, и здесь вы можете посмотреть последние обновления в нашей работе
+          </h4>
+          <div className="grid_news ">
+            {articles.map(({ slug, title, short }) =>
+              <div className="BW rel flex_end">
+                <div>
+                  {/* Для фото  */}git 
+                </div>
+                <div className="pl_5 pr_5">
+                  <Link key={slug} href={`articles/${slug}`}>
+                    <h5>
+                      {title}
+                    </h5>
+                  </Link>
+                  <p className="desc ">
+                    {short}
+                  </p>
+                  <p className="date">
+                    17.04.2023
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+
+
+        </section>
+
+        {/*  услуги */}
+        <section>
+          <h2 className="text_center">
+            Ремонтные услуги
+          </h2>
+          <div className='grid_serv margin_top5'>
+
+            {services.map((x) =>
+              <div className="flex_serv">
+                <div className="pl_5">
+                  <h3>
+                    {x.name}
+                  </h3>
+                  <p>
+                    {x.description}
+                  </p>
+                </div>
+
+                <div className={"pl_5 flex_between text_center "}>
+                  <p>
+                    от {x.price} р.
+                  </p>
+                  <button className='button_serv'>
+                    Воспользоваться услугой
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <Invite />
+
+        {/* //TODO вакансии*/}
+        <section>
+          <h2 className="text_center">
+            Открытые вакансии
+          </h2>
+          <div className='grid_serv margin_top5'>
+
+            {positions.map(({ positionSlug, positionName }) =>
+              <div className="flex_serv">
+                <div className="pl_5">
+                  <h3>
+                    <Link key={positionSlug} href={`positions/${positionSlug}`}>
+                      {positionName}
+                    </Link>
+                  </h3>
+                </div>
+                <div className={"pl_5"}>
+                  <Link key={positionSlug} href={`positions/${positionSlug}`}>
+                    <button className='button_serv mr10' >
+                      Подробнее
+                    </button>
+                  </Link>
+                  <button className='button_serv'>
+                    Воспользоваться услугой
+                  </button>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </section>
+
+
+        <Footer />
       </main>
     </>
   )
