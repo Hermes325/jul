@@ -3,7 +3,6 @@ import {
     Button,
     useDisclosure,
     Modal,
-    Lorem,
     ModalOverlay,
     ModalContent,
     ModalHeader,
@@ -33,7 +32,8 @@ export default function Invite() {
                 <ModalHeader>Modal Title</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Lorem count={2} />
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa modi doloremque eius sequi quos itaque provident consequuntur, assumenda ipsam dolore omnis rem odit, cupiditate voluptatibus officiis pariatur reiciendis veritatis quas.
+                    Ipsum consequatur vero dolores illo? Ipsa, ducimus? Provident veritatis voluptates veniam suscipit modi laudantium architecto harum ea iste facere odio fuga sint saepe impedit quia, ut atque itaque. Libero, officia.
                 </ModalBody>
 
                 <ModalFooter>

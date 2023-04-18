@@ -33,10 +33,10 @@ export async function getStaticProps() {
 }
 
 export default function Home({ articles, services, addresses, positions }) {
-  console.log('articles', articles)
-  console.log('services', services)
-  console.log('addresses', addresses)
-  console.log('positions', positions)
+  // console.log('articles', articles)
+  // console.log('services', services)
+  // console.log('addresses', addresses)
+  // console.log('positions', positions)
 
   return (
     <>
@@ -113,7 +113,7 @@ export default function Home({ articles, services, addresses, positions }) {
           </h4>
           <div className="grid_news ">
             {articles.map(({ slug, title, short, mainPicture }) =>
-              <div className="BW rel flex_end">
+              <div key={slug} className="BW rel flex_end">
                 <DatoCMSImage data={mainPicture.responsiveImage} />
                 <div className="pl_5 pr_5">
                   <Link key={slug} href={`articles/${slug}`}>
@@ -143,7 +143,7 @@ export default function Home({ articles, services, addresses, positions }) {
           <div className='grid_serv margin_top5'>
 
             {services.map((x) =>
-              <div className="flex_serv">
+              <div key={x.id} className="flex_serv">
                 <div className="pl_5">
                   <h3>
                     {x.name}
@@ -176,7 +176,7 @@ export default function Home({ articles, services, addresses, positions }) {
           <div className='grid_serv margin_top5'>
 
             {positions.map(({ positionSlug, positionName }) =>
-              <div className="flex_serv">
+              <div key={positionSlug} className="flex_serv">
                 <div className="pl_5">
                   <h3>
                     <Link key={positionSlug} href={`positions/${positionSlug}`}>
