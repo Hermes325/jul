@@ -37,7 +37,7 @@ export default function Invite() {
         emailjs
             .send(
                 "service_1wx8xjg",
-                "template_yc6pyon",
+                "template_cb70pai",
                 data,
                 "M-SfEALawXtRFQsfm"
             )
@@ -95,7 +95,7 @@ export default function Invite() {
 
 
                             <FormControl>
-                                <FormLabel>Укажите тип вашего помещения</FormLabel>
+                                <FormLabel>Тип вашего помещения</FormLabel>
                                 <Input required name='type' type='text' placeholder='Коммерческое/жилое; тип коммерческого помещения: салон красоты, общепит и т.д.' />
                             </FormControl>
 
