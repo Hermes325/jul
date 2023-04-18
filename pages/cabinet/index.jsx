@@ -24,12 +24,28 @@ const Cabinet = ({ address }) => {
       data[iterator[0]] = iterator[1]
     }
     console.table(data)
+    // TODO: валидация через Firebase
+
+    emailjs
+      .send(
+        "service_1wx8xjg",
+        "template_yc6pyon",
+        data,
+        "M-SfEALawXtRFQsfm"
+      )
+      .then((result) => console.log("result.text", result.text))
+      .catch((error) => console.error("catch error.text", JSON.stringify(error)))
+      .finally(() => console.log("finally"));
   }
 
   return <main className={styles.main}>
 
     <form onSubmit={sendApplication}>
       <VStack spacing='24px'>
+        <FormControl>
+          <FormLabel>ФИО</FormLabel>
+          <Input required name='name' type='text' placeholder='Как к вам обращаться?' />
+        </FormControl>
 
         <HStack spacing='24px'>
           <FormControl>
@@ -73,24 +89,3 @@ export async function getStaticProps() {
     props: { address },
   }
 }
-
-const data = {
-
-  'FIO': order.name,
-  'Email': order.email,
-  'phone': order.phone,
-  'list': JSON.stringify(emailList, null, 2),
-  'delivery_method': order.delivery,
-  'address': clientDelivery,
-  'comment': order.comment,
-}
-emailjs
-  .send(
-    "service_meeb64l",
-    "template_3i6j7qf",
-    orderData,
-    "Igg7aXsdDmTo0FNZG"
-  )
-  .then((result) => console.log("result.text", result.text))
-  .catch((error) => console.error("catch error.text", JSON.stringify(error)))
-  .finally(() => console.log("finally"));

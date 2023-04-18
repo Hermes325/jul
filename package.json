@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
+    "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "emailjs": "^4.0.1",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "framer-motion": "^10.12.4",
