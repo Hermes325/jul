@@ -17,6 +17,7 @@ import Slide4 from '@/components/slide4';
 import Slide5 from '@/components/slide5';
 import Invite from '@/components/invite';
 import Footer from '@/components/footer';
+import Positions from '@/components/positions';
 
 
 
@@ -181,36 +182,7 @@ export default function Home({ articles, services, addresses, positions }) {
         <Invite />
 
         {/* //TODO вакансии*/}
-        <section>
-          <h2 className="text_center">
-            Открытые вакансии
-          </h2>
-          <div className='grid_serv margin_top5'>
-
-            {positions.map(({ positionSlug, positionName }) =>
-              <div key={positionSlug} className="flex_serv">
-                <div className="pl_5">
-                  <h3>
-                    <Link key={positionSlug} href={`positions/${positionSlug}`}>
-                      {positionName}
-                    </Link>
-                  </h3>
-                </div>
-                <div className={"pl_5"}>
-                  <Link key={positionSlug} href={`positions/${positionSlug}`}>
-                    <button className='button_serv mr10' >
-                      Подробнее
-                    </button>
-                  </Link>
-                  <button className='button_serv'>
-                    Воспользоваться услугой
-                  </button>
-                </div>
-              </div>
-            )}
-
-          </div>
-        </section>
+        <Positions positions={positions} />
 
 
         <Footer />

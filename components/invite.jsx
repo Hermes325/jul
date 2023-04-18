@@ -13,7 +13,7 @@ import {
     VStack,
     FormControl,
     FormLabel,
-    Input
+    Input,
 } from '@chakra-ui/react'
 import emailjs from "@emailjs/browser"
 import styles from "./invite.module.css"
