@@ -8,8 +8,7 @@ const Header = () => {
                 <nav className={"flex_nav"}>
                     <Link href={'#'} className={"p_large"}>Услуги</Link>
                     <Link href={'#'} className={"p_large"}>Новости</Link>
-                    <Link href={'#'} className={"p_large"}>Войти</Link>
-                    <Link href={'#'} className={"p_large"}>Зарегистрироваться</Link>
+                    <Link href={'/cabinet'} className={"p_large"}>Кабинет жильца</Link>
                 </nav>
 
                 <div className={"p_xxlarge left_margin"}>Логотип</div>

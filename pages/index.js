@@ -12,7 +12,6 @@ import Slide3 from '@/components/slide3';
 import Slide4 from '@/components/slide4';
 import Slide5 from '@/components/slide5';
 import Invite from '@/components/invite';
-
 import Footer from '@/components/footer';
 
 
@@ -113,11 +112,9 @@ export default function Home({ articles, services, addresses, positions }) {
             Мы за постоянное улучшение качества жилищных условий наших объектов, и здесь вы можете посмотреть последние обновления в нашей работе
           </h4>
           <div className="grid_news ">
-            {articles.map(({ slug, title, short }) =>
+            {articles.map(({ slug, title, short, mainPicture }) =>
               <div className="BW rel flex_end">
-                <div>
-                  {/* Для фото  */}git 
-                </div>
+                <DatoCMSImage data={mainPicture.responsiveImage} />
                 <div className="pl_5 pr_5">
                   <Link key={slug} href={`articles/${slug}`}>
                     <h5>

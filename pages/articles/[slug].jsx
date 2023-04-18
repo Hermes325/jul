@@ -1,6 +1,8 @@
 import React from 'react'
 import { StructuredText, Image as DatoCMSImage } from "react-datocms";
 import { getArticleDetails, getArticlesPaths } from '@/lib/datocms'
+import Link from 'next/link';
+import styles from "./articles.module.css"
 
 // articles/[slug].js
 export default function Article({ article }) {
@@ -8,6 +10,9 @@ export default function Article({ article }) {
   console.log('Article >>', article)
   return <>
     <main className='m_20'>
+      <Link className={styles.backToMain} href={"/"}>
+        Назад
+      </Link>
       <h2 className='margin_bot5'>{article.title}</h2>
       <div className={'w50 '}>
         <DatoCMSImage data={article.mainPicture.responsiveImage} />
