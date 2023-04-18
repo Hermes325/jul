@@ -1,6 +1,7 @@
 import React from 'react'
 import { getAddresses } from "@/lib/datocms"
 import styles from "./cabinet.module.css"
+import emailjs from "@emailjs/browser";
 import {
   Input,
   InputGroup,
@@ -72,3 +73,24 @@ export async function getStaticProps() {
     props: { address },
   }
 }
+
+const data = {
+
+  'FIO': order.name,
+  'Email': order.email,
+  'phone': order.phone,
+  'list': JSON.stringify(emailList, null, 2),
+  'delivery_method': order.delivery,
+  'address': clientDelivery,
+  'comment': order.comment,
+}
+emailjs
+  .send(
+    "service_meeb64l",
+    "template_3i6j7qf",
+    orderData,
+    "Igg7aXsdDmTo0FNZG"
+  )
+  .then((result) => console.log("result.text", result.text))
+  .catch((error) => console.error("catch error.text", JSON.stringify(error)))
+  .finally(() => console.log("finally"));
