@@ -2,6 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from "next/font/google"
 import { Image as DatoCMSImage } from "react-datocms";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
 import { getAddresses, getPositionPaths, getServices, getArticles } from '@/lib/datocms'
 import styles from '@/styles/Home.module.css'
 import Header from '@/components/header';
@@ -111,9 +115,18 @@ export default function Home({ articles, services, addresses, positions }) {
           <h4 className={"text_center w45"}>
             Мы за постоянное улучшение качества жилищных условий наших объектов, и здесь вы можете посмотреть последние обновления в нашей работе
           </h4>
-          <div className="grid_news ">
+
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
             {articles.map(({ slug, title, short, mainPicture }) =>
-              <div key={slug} className="BW rel flex_end">
+              <SwiperSlide key={slug} className="BW rel flex_end">
                 <DatoCMSImage data={mainPicture.responsiveImage} />
                 <div className="pl_5 pr_5">
                   <Link key={slug} href={`articles/${slug}`}>
@@ -128,10 +141,9 @@ export default function Home({ articles, services, addresses, positions }) {
                     17.04.2023
                   </p>
                 </div>
-              </div>
+              </SwiperSlide>
             )}
-          </div>
-
+          </Swiper>
 
         </section>
 

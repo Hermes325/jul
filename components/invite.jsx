@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    Button,
     useDisclosure,
     Modal,
     ModalOverlay,
@@ -9,13 +8,45 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
+    Heading,
+    Text,
+    Button,
+    VStack,
+    InputGroup,
+    InputLeftElement,
+    FormControl,
+    FormLabel,
+    Input
 } from '@chakra-ui/react'
+import styles from "./invite.module.css"
+
 
 export default function Invite() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const finalRef = React.useRef(null)
 
-    return (<section>
+    function sendContact(e) {
+        e.preventDefault()
+        const formData = new FormData(e.target);
+        const data = {}
+        for (const iterator of formData.entries()) {
+            data[iterator[0]] = iterator[1]
+        }
+        console.table(data)
+
+        emailjs
+            .send(
+                "service_1wx8xjg",
+                "template_yc6pyon",
+                data,
+                "M-SfEALawXtRFQsfm"
+            )
+            .then((result) => console.log("result.text", result.text))
+            .catch((error) => console.error("catch error.text", JSON.stringify(error)))
+            .finally(() => console.log("finally"));
+    }
+
+    return (<section className={styles.invite}>
         <h2 className={" margin_top15 flex_center text_center p_xxxlarge"}>
             Присоединение дома к УО
         </h2>
@@ -29,19 +60,51 @@ export default function Invite() {
         <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
-                <ModalHeader>Modal Title</ModalHeader>
+                <ModalHeader>
+                    <Heading textAlign={"center"}>
+                        Присоединение дома к услугам Управляющей Организации
+                    </Heading>
+                </ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa modi doloremque eius sequi quos itaque provident consequuntur, assumenda ipsam dolore omnis rem odit, cupiditate voluptatibus officiis pariatur reiciendis veritatis quas.
-                    Ipsum consequatur vero dolores illo? Ipsa, ducimus? Provident veritatis voluptates veniam suscipit modi laudantium architecto harum ea iste facere odio fuga sint saepe impedit quia, ut atque itaque. Libero, officia.
-                </ModalBody>
+                    <form onSubmit={sendContact}>
+                        <VStack spacing='24px'>
+                            <Text fontSize='md'>
+                                Оставьте ваши контакты, и мы с вами свяжемся в ближайшее время!
+                            </Text>
 
-                <ModalFooter>
-                    <Button colorScheme='blue' mr={3} onClick={onClose}>
-                        Close
-                    </Button>
-                    <Button variant='ghost'>Secondary Action</Button>
-                </ModalFooter>
+                            <FormControl>
+                                <FormLabel>Ваш email</FormLabel>
+                                <Input required name='email' type='email' placeholder='example@gmail.com' />
+                            </FormControl>
+
+                            <FormControl>
+                                <FormLabel>Ваше имя</FormLabel>
+                                <Input required name='name' type='text' placeholder='Например, Максим Сергеевич' />
+                            </FormControl>
+
+                            <FormControl>
+                                <FormLabel>Ваш телефон</FormLabel>
+                                <Input required name='phone' type='tel' placeholder='+7 (999) 999-99-99' />
+                            </FormControl>
+
+                            <FormControl>
+                                <FormLabel>Адрес вашего помещения</FormLabel>
+                                <Input required name='address' type='text' placeholder='г. Нижний Тагил, ул. Красноармейская, д.66' />
+                            </FormControl>
+
+
+                            <FormControl>
+                                <FormLabel>Укажите тип вашего помещения</FormLabel>
+                                <Input required name='type' type='text' placeholder='Коммерческое/жилое; тип коммерческого помещения: салон красоты, общепит и т.д.' />
+                            </FormControl>
+
+                            <Button colorScheme='green' type='submit'>
+                                Отправить
+                            </Button>
+                        </VStack>
+                    </form>
+                </ModalBody>
             </ModalContent>
         </Modal>
     </section>)
