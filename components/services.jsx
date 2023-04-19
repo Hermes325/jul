@@ -1,6 +1,5 @@
 import React from 'react'
 import emailjs from "@emailjs/browser"
-import { StructuredText } from "react-datocms"
 import {
   useDisclosure,
   Input,
@@ -10,7 +9,6 @@ import {
   HStack,
   VStack,
   Button,
-  Textarea,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -20,17 +18,17 @@ import {
   Heading,
   Text
 } from '@chakra-ui/react'
-import styles from "./positions.module.css"
+import styles from "./services.module.css"
 
-
-export default function Positions({ positions }) {
+export default function Services({ services }) {
   const applicationModal = useDisclosure()
   const applicationModalRef = React.useRef(null)
   const descriptionModal = useDisclosure()
   const descriptionModalRef = React.useRef(null)
-  const [position, setPosition] = React.useState(positions[0])
+  const [service, setService] = React.useState(services[0])
 
-  function sendPosition(e) {
+
+  function buyService(e) {
     e.preventDefault()
     const formData = new FormData(e.target);
     const data = {}
@@ -53,37 +51,42 @@ export default function Positions({ positions }) {
 
   return <section>
     <h2 className="text_center">
-      Открытые вакансии
+      Ремонтные услуги
     </h2>
 
     <div className='grid_serv margin_top5'>
-      {positions.map(({ positionSlug, positionName }, i) =>
-        <div key={positionSlug} className="flex_serv">
+      {services.map(({ id, name, price }, i) =>
+        <div key={id} className="flex_serv">
           <div className="pl_5">
-            <h3>{positionName}</h3>
+            <h3>{name}</h3>
           </div>
-          <div className={"pl_5"}>
+
+          <VStack className="pl_5" align={"self-start"} spacing={"12px"}>
+            <p>от {price} р.</p>
             <HStack spacing={"12px"}>
               <Button
                 bgColor="black" color="white" className={styles.btn_description}
                 onClick={() => {
-                  setPosition(positions[i])
+                  setService(services[i])
                   descriptionModal.onOpen()
                 }}>
                 Подробнее
               </Button>
               <Button
                 variant='outline' className={styles.btn_application}
-                onClick={applicationModal.onOpen} >
-                Откликнуться на вакансию
+                onClick={() => {
+                  setService(services[i])
+                  applicationModal.onOpen()
+                }}>
+                Воспользоваться услугой
               </Button>
             </HStack>
-          </div>
-        </div>)}
+          </VStack>
+        </div>
+      )}
     </div>
 
-
-    {/* Модалка с подачей на вакансию */}
+    {/* Модалка с формой для услуги */}
     <Modal
       finalFocusRef={applicationModalRef}
       isOpen={applicationModal.isOpen}
@@ -92,15 +95,15 @@ export default function Positions({ positions }) {
       <ModalContent>
         <ModalHeader>
           <Heading textAlign={"center"}>
-            Отклик на вакансию
+            Заявка на выполнение аутсорс-услуг
           </Heading>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <form onSubmit={sendPosition}>
+          <form onSubmit={buyService}>
             <VStack spacing='24px'>
               <Text fontSize='md'>
-                Заполните поля, и мы с вами свяжемся!
+                Введите ваши данные и мы свяжемся с вами в ближайшее время!
               </Text>
 
               <FormControl>
@@ -119,30 +122,20 @@ export default function Positions({ positions }) {
               </FormControl>
 
               <FormControl>
-                <FormLabel>Ваш возраст</FormLabel>
-                <Input required name='age' type='number' placeholder='Введите число' />
-              </FormControl>
-
-              <FormControl>
-                <FormLabel>Выберите интересующую вас вакансию</FormLabel>
-                <Select required name='vacancy' placeholder='Выберите вакансию'>
-                  {positions.map(({ positionSlug, positionName }) =>
-                    <option key={positionSlug}>{positionName}</option>)}
+                <FormLabel>Выберите одну или несколько услуг, которыми хотите воспользоваться</FormLabel>
+                <Select required name='service' defaultValue={service.name}>
+                  {services.map(({ name }, i) =>
+                    <option key={i}>{name}</option>)}
                 </Select>
               </FormControl>
 
               <FormControl>
-                <FormLabel>Опишите ваш опыт работы</FormLabel>
-                <Textarea required name='experience' placeholder='Был ли у вас опыт работы в указанной сфере, сколько лет, где, какие функции вы выполняли. Расскажите про ваш опыт работы в других сферах, если он имеется' />
-              </FormControl>
-
-              <FormControl>
-                <FormLabel>Ваше образования</FormLabel>
-                <Textarea required name='education' placeholder='Среднее, высшее (по каким специальностям, год окончания)/отсутствует' />
+                <FormLabel>Опишите тип помещения, в котором нужны выбранные ремонтные услуги</FormLabel>
+                <Input required name='type' type='text' placeholder='Коммерческое/жилое; тип коммерческого помещения: салон красоты, общепит и т.д.' />
               </FormControl>
 
               <Button colorScheme='green' type='submit'>
-                Отправить резюме
+                Отправить заявку
               </Button>
             </VStack>
           </form>
@@ -150,7 +143,7 @@ export default function Positions({ positions }) {
       </ModalContent>
     </Modal>
 
-    {/* Модалка с описанием вакансии */}
+    {/* Модалка с описанием услуги */}
     <Modal
       finalFocusRef={descriptionModalRef}
       isOpen={descriptionModal.isOpen}
@@ -159,12 +152,12 @@ export default function Positions({ positions }) {
       <ModalContent>
         <ModalHeader>
           <Heading textAlign={"center"}>
-            {position.positionName}
+            {service.name}
           </Heading>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <StructuredText data={position.positionDescription} />
+          <Text>{service.description}</Text>
         </ModalBody>
       </ModalContent>
     </Modal>

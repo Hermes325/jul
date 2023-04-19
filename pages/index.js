@@ -6,9 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
-import { getAddresses, getPositionPaths, getServices, getArticles } from '@/lib/datocms'
+import { getAddresses, getPositions, getServices, getArticles } from '@/lib/datocms'
 import styles from '@/styles/Home.module.css'
-import Header from '@/components/header';
 import Link from 'next/link';
 import Slide1 from '@/components/slide1';
 import Slide2 from '@/components/slide2';
@@ -18,6 +17,7 @@ import Slide5 from '@/components/slide5';
 import Invite from '@/components/invite';
 import Footer from '@/components/footer';
 import Positions from '@/components/positions';
+import Services from '@/components/services';
 
 
 
@@ -30,7 +30,7 @@ export async function getStaticProps() {
   const articles = await getArticles()
   const services = await getServices()
   const addresses = await getAddresses()
-  const positions = await getPositionPaths()
+  const positions = await getPositions()
 
   return {
     props: { articles, services, addresses, positions },
@@ -149,39 +149,12 @@ export default function Home({ articles, services, addresses, positions }) {
         </section>
 
         {/*  услуги */}
-        <section>
-          <h2 className="text_center">
-            Ремонтные услуги
-          </h2>
-          <div className='grid_serv margin_top5'>
+        <Services services={services} />
 
-            {services.map((x) =>
-              <div key={x.id} className="flex_serv">
-                <div className="pl_5">
-                  <h3>
-                    {x.name}
-                  </h3>
-                  <p>
-                    {x.description}
-                  </p>
-                </div>
-
-                <div className={"pl_5 flex_between text_center "}>
-                  <p>
-                    от {x.price} р.
-                  </p>
-                  <button className='button_serv'>
-                    Воспользоваться услугой
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-
+        {/* Присоединение дома к УО */}
         <Invite />
 
-        {/* //TODO вакансии*/}
+        {/* вакансии */}
         <Positions positions={positions} />
 
 
