@@ -9,11 +9,18 @@ export default function Article({ article }) {
 
   console.log('Article >>', article)
   return <>
-    <main className='m_20'>
-      <Link className={styles.backToMain} href={"/"}>
-        Назад
-      </Link>
+    <header className={'flex_center border margin_top2 pb_2'}>
+      <p>
+        Новости организации
+      </p>
+
+    </header>
+    <Link className={styles.backToMain} href={"/"}>
+      Назад
+    </Link>
+    <main className={'m_25 margin_top5'}>
       <h2 className='margin_bot5'>{article.title}</h2>
+
       <div className={'w50 '}>
         <DatoCMSImage data={article.mainPicture.responsiveImage} />
       </div>

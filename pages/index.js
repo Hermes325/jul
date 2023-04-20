@@ -109,7 +109,7 @@ export default function Home({ articles, services, addresses, positions }) {
 
 
         {/* //TODO новости*/}
-        <section className="flex_center  flex_colom BC">
+        <section className="flex_center flex_colom BC">
           <h2 className="text_center margin_top5">
             Новости организации
           </h2>
@@ -126,22 +126,22 @@ export default function Home({ articles, services, addresses, positions }) {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {articles.map(({ slug, title, short, mainPicture }) =>
+            {articles.map(({ slug, title, short, mainPicture, date }) =>
               <SwiperSlide key={slug} className="BW rel flex_end">
-                <DatoCMSImage data={mainPicture.responsiveImage} />
-                <div className="pl_5 pr_5">
-                  <Link key={slug} href={`articles/${slug}`}>
+                <Link key={slug} href={`articles/${slug}`}>
+                  <DatoCMSImage data={mainPicture.responsiveImage} />
+                  <div className="pl_5 pr_5">
                     <h5>
                       {title}
                     </h5>
-                  </Link>
-                  <p className="desc ">
-                    {short}
-                  </p>
-                  <p className="date">
-                    17.04.2023
-                  </p>
-                </div>
+                    <p className="desc ">
+                      {short}
+                    </p>
+                    <p className="date">
+                      {date}
+                    </p>
+                  </div>
+                </Link>
               </SwiperSlide>
             )}
           </Swiper>
