@@ -1,6 +1,6 @@
 const Slide4 = () => {
     return (
-        <section className="flex_center margin_top15 flex_colom BC " >
+        <section id="adress" className="flex_center margin_top15 flex_colom BC " >
             <h2 className="text_center margin_top5">
                 Наши адреса
             </h2>

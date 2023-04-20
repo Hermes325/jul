@@ -1,7 +1,7 @@
 import Link from "next/link";
 const Slide3 = () => {
     return (
-        <section className="flex_center margin_top15 flex_colom ">
+        <section id="services" className="flex_center margin_top15 flex_colom ">
             <h2 className="text_center">
                 Услуги организации
             </h2>

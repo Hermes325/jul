@@ -62,7 +62,7 @@ export default function Positions({ positions }) {
           <div className="pl_5">
             <h3>{positionName}</h3>
           </div>
-          <div className={"pl_5"}>
+          <div className={"pl_5 margin_bot15"}>
             <HStack spacing={"12px"}>
               <Button
                 bgColor="black" color="white" className={styles.btn_description}
