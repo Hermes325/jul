@@ -590,3 +590,10 @@ footer {
 .height_100{
   height: 100vh;
 }
+.mr2{
+  margin-right: 2px;
+}
+.ml2
+{
+  margin-left: 2px;
+}

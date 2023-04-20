@@ -15,7 +15,7 @@ export default function Article({ article }) {
       </p>
 
     </header>
-    <Link className={styles.backToMain} href={"/"}>
+    <Link className={styles.backToMain} href={"/#news"}>
       Назад
     </Link>
     <main className={'m_25 margin_top5'}>

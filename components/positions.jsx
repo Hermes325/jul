@@ -51,7 +51,7 @@ export default function Positions({ positions }) {
       .finally(() => console.log("finally"));
   }
 
-  return <section>
+  return <section id='positions'>
     <h2 className="text_center">
       Открытые вакансии
     </h2>

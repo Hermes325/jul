@@ -1,7 +1,7 @@
 import Link from "next/link";
 const Slide3 = () => {
     return (
-        <section id="services" className="flex_center margin_top15 flex_colom ">
+        <section className="flex_center margin_top15 flex_colom ">
             <h2 className="text_center">
                 Услуги организации
             </h2>
@@ -20,9 +20,7 @@ const Slide3 = () => {
                         Все виды ремонтных работ по низкой цене
                     </p>
 
-
-
-                    <Link href={`#service`}>
+                    <Link href={`#services`}>
                         <button className="button_service">
                             Арендовать услугу
                         </button>
@@ -41,9 +39,12 @@ const Slide3 = () => {
                     <p>
                         Воплощаем желаемое в действительное
                     </p>
-                    <button className="button_service">
-                        Оставить заявку
-                    </button>
+
+                    <Link href={'#invite'} className={"p_large"}>
+                        <button className="button_service">
+                            Оставить заявку
+                        </button>
+                    </Link>
                 </div>
 
                 <div className="flex_service">
@@ -54,9 +55,12 @@ const Slide3 = () => {
                     <p>
                         Заботимся и ценим каждого сотрудника
                     </p>
-                    <button className="button_service">
-                        Оставить резюме
-                    </button>
+                    <Link href={'#positions'} className={"p_large"}>
+                        <button className="button_service">
+                            Оставить резюме
+                        </button>
+                    </Link>
+
                 </div>
 
                 <div className={"service3"}></div>

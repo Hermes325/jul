@@ -63,7 +63,7 @@ const Cabinet = ({ address }) => {
 
         <FormControl>
           <FormLabel>Обращение</FormLabel>
-          <Textarea required name='application' placeholder='Торжественно клянусь, что замышляю только шалость' />
+          <Textarea required name='application' placeholder='Введите, пожалуйста, текст заявки на обслуживание/ремонт' />
         </FormControl>
 
         <FormControl>

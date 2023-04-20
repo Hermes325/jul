@@ -44,7 +44,7 @@ export default function Invite() {
             .finally(() => console.log("finally"));
     }
 
-    return (<section className={styles.invite}>
+    return (<section id='invite' className={styles.invite}>
         <h2 className={" margin_top15 flex_center text_center p_xxxlarge"}>
             Присоединение дома к УО
         </h2>
