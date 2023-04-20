@@ -1,7 +1,7 @@
 import Header from "./header";
 const Slide1 = () => {
     return (
-        <div className="margin_bot15">
+        <div className="margin_bot5 height_100">
             <Header></Header>
 
 

@@ -1,6 +1,6 @@
 const Slide2 = () => {
     return (
-        <section className="flex_center  padding_top4">
+        <section className="flex_center padding_top4">
             <div className={" au_photo mr50"}></div>
             <div className="w42">
                 <h2 className="text_center">

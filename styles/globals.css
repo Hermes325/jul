@@ -107,7 +107,9 @@ h4 {
 .pb_2 {
   padding-bottom: 2%;
 }
-
+.pt4{
+padding-top: 4%;
+}
 .padding_top4 {
   padding: 4% 7% 0 7%;
 }
@@ -351,10 +353,10 @@ hr {
 }
 
 .adress1 {
-
-  background-repeat: no-repeat;
-  background-size  : cover;
-  background-image : url(https://thumb.tildacdn.com/tild3436-3666-4561-a539-343639373431/-/resize/600x/-/format/webp/_.jpg);
+  background-position: right;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-image   : url(https://thumb.tildacdn.com/tild3436-3666-4561-a539-343639373431/-/resize/600x/-/format/webp/_.jpg);
 
 }
 
@@ -367,13 +369,27 @@ hr {
 }
 
 .adress3 {
-
-  background-repeat: no-repeat;
-  background-size  : cover;
-  background-image : url(https://thumb.tildacdn.com/tild6235-3763-4565-a537-626533663136/-/resize/600x/-/format/webp/photo.JPG);
+  background-position: right;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-image   : url(https://thumb.tildacdn.com/tild6235-3763-4565-a537-626533663136/-/resize/600x/-/format/webp/photo.JPG);
 
 }
 
+.p_adress {
+  max-width    : 560px;
+  margin       : 0 auto;
+  padding-top  : 20px;
+  padding-right: 10px;
+  padding-left : 10px;
+  font-size    : 16px;
+  text-align   : center;
+  line-height  : 25px;
+  opacity      : .7;
+  font-family  : 'TildaSans', Arial, sans-serif;
+  font-weight  : 300;
+  color        : #000000;
+}
 
 .button_service {
   color                : #ffffff;
@@ -451,7 +467,8 @@ hr {
   display              : grid;
   justify-content      : center;
   grid-template-columns: repeat(3, 25%);
-  grid-column-gap      : 50px;
+  grid-row-gap         : 20%;
+  grid-column-gap      : 5%;
 
 }
 
@@ -568,4 +585,8 @@ footer {
 
   width    : 180px;
   transform: translateY(-35px);
+}
+
+.height_100{
+  height: 100vh;
 }

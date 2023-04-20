@@ -49,7 +49,7 @@ export default function Services({ services }) {
       .finally(() => console.log("finally"));
   }
 
-  return <section>
+  return <section className='pt4'>
     <h2 className="text_center">
       Ремонтные услуги
     </h2>
