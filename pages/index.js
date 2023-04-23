@@ -55,6 +55,7 @@ export default function Home({ articles, services, addresses, positions }) {
       </Head>
 
       <main>
+        <script defer type="text/javascript" src="/yandex-metrica.js" />
         <Slide1 />
         <Slide2 />
         <Slide3 />
