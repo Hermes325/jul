@@ -28,7 +28,7 @@ h2 {
   margin-bottom: 0;
   font-size    : 42px;
   line-height  : 1.23;
-  font-family  : 'TildaSans', Arial, sans-serif;
+  font-family  : 'Montserrat', Arial, sans-serif;
   font-weight  : 600;
   color        : #000000;
 
@@ -38,7 +38,7 @@ h2 {
 h3 {
   font-size  : 26px;
   line-height: 1.23;
-  font-family: 'TildaSans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 600;
   color      : #000000;
 }
@@ -46,7 +46,7 @@ h3 {
 h4 {
   font-size    : 24px;
   line-height  : 1.5;
-  font-family  : 'TildaSans', Arial, sans-serif;
+  font-family  : 'Montserrat', Arial, sans-serif;
   font-weight  : 300;
   color        : #000000;
   margin-bottom: 5%;
@@ -72,7 +72,7 @@ h4 {
 }
 
 .footer_font {
-  font-family: 'TildaSans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 600;
   color      : #000000;
   font-size  : 28px;
@@ -107,9 +107,11 @@ h4 {
 .pb_2 {
   padding-bottom: 2%;
 }
-.pt4{
-padding-top: 4%;
+
+.pt4 {
+  padding-top: 4%;
 }
+
 .padding_top4 {
   padding: 4% 7% 0 7%;
 }
@@ -321,7 +323,7 @@ hr {
 }
 
 .desc {
-  font-family: 'TildaSans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 300;
   color      : #000000;
   font-size  : 20px;
@@ -398,7 +400,7 @@ hr {
   text-align   : center;
   line-height  : 25px;
   opacity      : .7;
-  font-family  : 'TildaSans', Arial, sans-serif;
+  font-family  : 'Montserrat', Arial, sans-serif;
   font-weight  : 300;
   color        : #000000;
 }
@@ -419,7 +421,7 @@ hr {
   font-size            : 14px;
   padding-left         : 30px;
   padding-right        : 30px;
-  font-family          : 'TildaSans', Arial, sans-serif;
+  font-family          : 'Montserrat', Arial, sans-serif;
   border               : 0 none;
   text-align           : center;
   white-space          : nowrap;
@@ -434,7 +436,7 @@ hr {
   color             : #ffffff;
   background-color  : #199c68;
   border            : 3px solid #ffffff;
-  font-family       : 'TildaSans', Arial, sans-serif;
+  font-family       : 'Montserrat', Arial, sans-serif;
   text-align        : center;
   line-height       : 60px;
   font-size         : 16px;
@@ -570,7 +572,7 @@ footer {
   text-align : start;
   font-size  : 20px;
   line-height: 1.35;
-  font-family: 'TildaSans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 600;
   color      : #000000;
 }
@@ -579,7 +581,7 @@ footer {
   text-align : start;
   font-size  : 14px;
   line-height: 1.55;
-  font-family: 'TildaSans', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 300;
   color      : rgba(0, 0, 0, .9);
 }
@@ -589,7 +591,7 @@ footer {
   font-size     : 10px;
   letter-spacing: 1px;
   color         : rgba(0, 0, 0, .5);
-  font-family   : 'TildaSans', Arial, sans-serif;
+  font-family   : 'Montserrat', Arial, sans-serif;
   font-weight   : 300;
 }
 
@@ -599,17 +601,52 @@ footer {
   transform: translateY(-35px);
 }
 
-.height_100{
+.height_100 {
   height: 100vh;
 }
-.mr2{
+
+.mr2 {
   margin-right: 2px;
 }
-.ml2
-{
+
+.ml2 {
   margin-left: 2px;
 }
 
-.hr{
+.hr {
   height: 3px;
+}
+
+/* скролл */
+.go-top {
+  z-index: 3;
+  position        : fixed;
+  /* фиксированное позиционирование */
+  right           : 20px;
+  /* отступ слева 20px */
+  top             : 75%;
+  /* выравниваем по центру */
+  transform       : translateY(-50%);
+  /* выравниваем по центру */
+  cursor          : pointer;
+  /* при наведении меняем курсор */
+  display         : none;
+  /* по умолчанию скрываем кнопку */
+  font-size       : 20px;
+  color           : #22e296;
+  border          : 1px solid #199c68;
+  background-color: rgba(198, 214, 246, 0.1);
+  padding         : 5px 10px;
+}
+
+/* меняем прозрачность при наведении мышкой */
+.go-top:hover {
+  color           : #199c68;
+  border          : 1px solid #199c68;
+  background-color: rgba(198, 214, 246, 0.1);
+}
+
+/* модификатор для отображения кнопки */
+.go-top--show {
+  display: block;
 }

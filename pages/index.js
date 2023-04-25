@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { getAddresses, getPositions, getServices, getArticles } from '@/lib/datocms'
-import styles from '@/styles/Home.module.css'
+
 import Link from 'next/link';
 import Slide1 from '@/components/slide1';
 import Slide2 from '@/components/slide2';
@@ -19,6 +19,7 @@ import Footer from '@/components/footer';
 import Positions from '@/components/positions';
 import Services from '@/components/services';
 import Script from 'next/script'
+
 
 
 
@@ -58,6 +59,7 @@ export default function Home({ articles, services, addresses, positions }) {
 
       <main>
         <Script defer type="text/javascript" src="/yandex-metrica.js" />
+        <Script defer type="text/javascript" src="/scroll.js" />
         <Slide1 />
         <Slide2 />
         <Slide3 />
@@ -113,7 +115,7 @@ export default function Home({ articles, services, addresses, positions }) {
         </section> */}
 
 
-        {/* //TODO новости*/}
+        {/*новости*/}
         <section id='news' className="flex_center flex_colom BC pb150">
           <h2 className="text_center margin_top5">
             Новости организации
@@ -161,9 +163,9 @@ export default function Home({ articles, services, addresses, positions }) {
 
         {/* вакансии */}
         <Positions positions={positions} />
-
-
+        <section className={"go-top"}>▲</section>
         <Footer />
+        
       </main>
     </>
   )
