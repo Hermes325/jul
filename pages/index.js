@@ -62,59 +62,9 @@ export default function Home({ articles, services, addresses, positions }) {
         <Script defer type="text/javascript" src="/scroll.js" />
         <Slide1 />
         <Slide2 />
-        <Slide3 />
-        <Slide4 />
-        {/* <Slide5 /> */}
-
-        {/* //TODO адреса*/}
-
-        {/* <section className="flex_center margin_top15 flex_colom BC" style={{ overflow: 'hidden' }}>
-
-          <h2 className="text_center">
-            Наши адреса
-          </h2>
-          <h4>
-            Мы успешно обслуживаем жилые помещения по следующим адресам:
-          </h4>
-
-          <div className={"grid grid_service"}>
-
-            <div>
-              {addresses.map(x =>
-                <DatoCMSImage
-                  key={x.id}
-                  data={x.picture.responsiveImage}
-
-                />)}
-            </div>
-
-
-            {addresses.map((x) =>
-
-              <div className="flex_service">
-                <div>
-                  фото
-                </div>
-                <div className="pl_5">
-                  <h3>
-                    {x.address}
-                  </h3>
-                  <p>
-                    {x.description}
-                  </p>
-                </div>
-
-              </div>
-
-            )}
-
-
-
-          </div>
-
-        </section> */}
-
-
+        {/* <Slide3 /> */}
+        {/* <Slide4 /> */}
+       
         {/*новости*/}
         <section id='news' className="flex_center flex_colom BC pb150">
           <h2 className="text_center margin_top5">
@@ -125,11 +75,12 @@ export default function Home({ articles, services, addresses, positions }) {
           </h4>
 
           <Swiper
-            slidesPerView={3}
+            slidesPerView={1}
             spaceBetween={30}
             pagination={{
               clickable: true,
             }}
+            
             modules={[Pagination]}
             className={"mySwiper "}
           >

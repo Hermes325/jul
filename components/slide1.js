@@ -10,8 +10,8 @@ const Slide1 = () => {
 
 
 
-            <h1 className={" margin_top10 flex_center text_center p_xxxlarge"}>Управляющая организация <br /> ИП Стриганов М.С. </h1>
-            <p className={'flex_center p_xxlarge'}>
+            <h1 className={" margin_top10 flex_center text_center h50vh"}>Управляющая организация <br /> ИП Стриганов М.С. </h1>
+            <p className={'flex_center p_xxlarge text_center'}>
                 Содержание, благоустройство жилых помещений и сервис ремонтных услуг
             </p>
         </div>

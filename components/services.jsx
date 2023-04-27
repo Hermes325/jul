@@ -54,7 +54,7 @@ export default function Services({ services }) {
       Ремонтные услуги
     </h2>
 
-    <div className='grid_serv margin_top5'>
+    <div className='grid_serv margin_top5 mb40'>
       {services.map(({ id, name, price }, i) =>
         <div key={id} className="flex_serv">
           <div className="pl_5">
@@ -65,7 +65,7 @@ export default function Services({ services }) {
             <p>от {price} р.</p>
             <HStack spacing={"12px"}>
               <Button
-                bgColor="black" color="white" className={styles.btn_description}
+                bgColor="black" color="white" className={"btn_description btn_fs"}
                 onClick={() => {
                   setService(services[i])
                   descriptionModal.onOpen()
@@ -73,7 +73,7 @@ export default function Services({ services }) {
                 Подробнее
               </Button>
               <Button
-                variant='outline' className={styles.btn_application}
+                variant='outline' className={" btn_application btn_fs"} 
                 onClick={() => {
                   setService(services[i])
                   applicationModal.onOpen()

@@ -62,10 +62,10 @@ export default function Positions({ positions }) {
           <div className="pl_5">
             <h3>{positionName}</h3>
           </div>
-          <div className={"pl_5 margin_bot15"}>
-            <HStack spacing={"12px"}>
+          <div className={"pl_5 margin_bot15 "}>
+            <HStack spacing={"12px"} className={"margin_top5_mob "}>
               <Button
-                bgColor="black" color="white" className={styles.btn_description}
+                bgColor="black" color="white" className={"btn_fs btn_description"}
                 onClick={() => {
                   setPosition(positions[i])
                   descriptionModal.onOpen()
@@ -73,7 +73,7 @@ export default function Positions({ positions }) {
                 Подробнее
               </Button>
               <Button
-                variant='outline' className={styles.btn_application}
+                variant='outline' className={"btn_application btn_fs"}
                 onClick={applicationModal.onOpen} >
                 Откликнуться на вакансию
               </Button>

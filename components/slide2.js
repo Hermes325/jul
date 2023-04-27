@@ -1,7 +1,7 @@
 const Slide2 = () => {
     return (
-        <section className="flex_center padding_top4">
-            <div className={" au_photo mr50"}></div>
+        <section className="flex_center_au padding_top4">
+            <div className={" au_photo mr50_au"}></div>
             <div className="w42">
                 <h2 className="text_center ">
                     О нашей компании

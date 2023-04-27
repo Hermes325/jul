@@ -19,6 +19,7 @@ a {
 }
 
 h1 {
+  font-family     : 'Montserrat', Arial, sans-serif;
   color           : rgb(255, 255, 255);
   font-size       : 65px;
   transition-delay: 0s;
@@ -124,6 +125,10 @@ h4 {
   padding-right: 5%;
 }
 
+.pr30 {
+  padding-right: 30px;
+}
+
 .m_auto {
   margin-right: auto;
   margin-left : auto;
@@ -145,6 +150,10 @@ h4 {
   margin-right: 50px;
 }
 
+.mr50_au {
+  margin-right: 50px;
+}
+
 .m_20 {
   margin-left: 20%;
 }
@@ -160,6 +169,12 @@ h4 {
 }
 
 .flex_center {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+.flex_center_au {
   display        : flex;
   justify-content: center;
   align-items    : center;
@@ -281,6 +296,10 @@ hr {
 
 }
 
+.h50vh {
+  height: 50vh;
+}
+
 .BC {
   background-color: #ededed;
 }
@@ -292,14 +311,15 @@ hr {
 
 
 .BG {
-  top              : 0%;
-  position         : absolute;
-  height           : 100vh;
-  width            : 100%;
-  background-size  : cover;
-  background-repeat: no-repeat;
-  background-image : url(https://thumb.tildacdn.com/tild3236-3430-4535-a666-653931383265/-/format/webp/__.jpg);
-  z-index          : -2;
+  top                : 0%;
+  position           : absolute;
+  height             : 100vh;
+  width              : 100%;
+  background-size    : cover;
+  background-repeat  : no-repeat;
+  background-position: center center;
+  background-image   : url(https://thumb.tildacdn.com/tild3236-3430-4535-a666-653931383265/-/format/webp/__.jpg);
+  z-index            : -2;
 }
 
 .grad {
@@ -447,7 +467,7 @@ hr {
   cursor            : pointer;
   box-sizing        : content-box;
   height            : 60px;
-  min-height        : 60px;
+  min-height        : 35px;
 }
 
 .grid_service {
@@ -619,7 +639,7 @@ footer {
 
 /* скролл */
 .go-top {
-  z-index: 3;
+  z-index         : 3;
   position        : fixed;
   /* фиксированное позиционирование */
   right           : 20px;
@@ -649,4 +669,117 @@ footer {
 /* модификатор для отображения кнопки */
 .go-top--show {
   display: block;
+
+}
+
+
+/* media */
+
+@media (max-width: 800px) {
+
+
+  .center_text_m {
+    text-align: center;
+  }
+
+  .flex_center_au {
+    flex-direction: column;
+  }
+
+  .grid_serv {
+    display              : grid;
+    justify-content      : center;
+    grid-template-columns: repeat(1, 95%);
+    grid-row-gap         : 10%;
+    grid-column-gap      : 5%;
+  }
+
+  .au_photo {
+    height: 340px;
+    width : 100%;
+  }
+
+  .mr50_au {
+    margin-right: 0;
+  }
+
+  .w42 {
+    width: 100%;
+  }
+
+  h1 {
+    padding    : 0 7%;
+    line-height: 75px;
+    font-size  : 60px;
+    font-weight: 400;
+  }
+
+  h2 {
+    margin-top : 20px;
+    padding    : 0 7%;
+    font-size  : 30px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .w70 {
+    margin-top   : 20px;
+    margin-bottom: 20px;
+    width        : 95%;
+  }
+
+  .w45 {
+    width: 95%;
+  }
+
+  .mb40 {
+    margin-bottom: 40%;
+  }
+
+  .desc {
+    font-size: 15px;
+  }
+
+  .header_none {
+    display: none;
+  }
+
+  .margin_top5_mob {
+    margin-top: 5%;
+  }
+
+  .button_serv,
+  .button_serv:hover {
+    font-size: 10px;
+  }
+
+  .btn_fs {
+    font-size: 12px !important;
+  }
+
+}
+
+@media (max-width: 630px) {
+  h1 {
+    padding    : 0 7%;
+    line-height: 75px;
+    font-size  : 50px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 520px) {
+  h1 {
+    padding    : 0 7%;
+    line-height: 55px;
+    font-size  : 30px;
+    font-weight: 400;
+  }
 }

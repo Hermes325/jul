@@ -46,7 +46,7 @@ export default function Invite() {
 
     return (<section id='invite' className={styles.invite}>
         <hr className="hr2 margin_top15" />
-        <h2 className={"  margin_top2 flex_center text_center p_xxxlarge"}>
+        <h2 className={"  margin_top2 flex_center text_center"}>
             Присоединение дома к УО
         </h2>
         <h4 className={'flex_center text_center w70 m_auto'}>
