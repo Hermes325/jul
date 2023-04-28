@@ -4,7 +4,7 @@ const Slide4 = () => {
             <h2 className="text_center margin_top5">
                 Наши адреса
             </h2>
-            <h4>
+            <h4 className="center_adr">
                 Мы успешно обслуживаем жилые помещения по следующим адресам:
             </h4>
 
