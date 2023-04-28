@@ -65,7 +65,7 @@ export default function Services({ services }) {
             <p>от {price} р.</p>
             <HStack spacing={"12px"}>
               <Button
-                bgColor="black" color="white" className={"btn_description "}
+                bgColor="black" color="white" className={"btn_description btn_fs "}
                 onClick={() => {
                   setService(services[i])
                   descriptionModal.onOpen()
@@ -73,7 +73,7 @@ export default function Services({ services }) {
                 Подробнее
               </Button>
               <Button
-                variant='outline' className={"  btn_application "} 
+                variant='outline' className={"  btn_application  btn_fs"} 
                 onClick={() => {
                   setService(services[i])
                   applicationModal.onOpen()

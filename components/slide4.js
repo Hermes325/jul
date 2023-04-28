@@ -72,7 +72,7 @@ const Slide4 = () => {
                 </div>
 
             </div>
-            <div className={" grid_adress pl_15 pr_15 margin_bot15 hidden2"}>
+            <div className={" grid_adress pl_15 pr_15 margin_bot15 hidden1"}>
 
 
                 <div className={"adress1 "}></div>

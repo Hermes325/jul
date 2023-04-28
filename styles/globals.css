@@ -686,7 +686,7 @@ footer {
   }
 
   .hidden1 {
-    display: block !important;
+    display: grid !important;
 
   }
 

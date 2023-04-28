@@ -65,7 +65,7 @@ const Slide3 = () => {
 
                 <div className={"service3"}></div>
             </div>
-            <div className={"grid grid_service hidden2"}>
+            <div className={"grid grid_service hidden1"}>
                 <div className="flex_service">
                     <h3>
                         Ремонтные услуги
