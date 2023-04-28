@@ -226,6 +226,7 @@ h4 {
   justify-content: center;
 }
 
+
 .flex_serv {
   display       : flex;
   flex-direction: column;
@@ -353,7 +354,7 @@ hr {
 .grid {
   margin-inline: auto;
   display      : grid;
-  height       : 100vh;
+
 }
 
 .service1 {
@@ -672,10 +673,26 @@ footer {
 
 }
 
+.hidden1 {
+  display: none !important;
+}
+
 
 /* media */
 
 @media (max-width: 800px) {
+  .hidden {
+    display: none !important;
+  }
+
+  .hidden1 {
+    display: block !important;
+
+  }
+
+  .news_mt45 {
+    margin-top: 45%;
+  }
 
 
   .center_text_m {
@@ -686,12 +703,55 @@ footer {
     flex-direction: column;
   }
 
+  .flex_service:nth-child(2) {
+    display        : flex;
+    flex-direction : column;
+    align-items    : flex-start;
+    justify-content: center;
+  }
+
   .grid_serv {
     display              : grid;
     justify-content      : center;
     grid-template-columns: repeat(1, 95%);
     grid-row-gap         : 10%;
     grid-column-gap      : 5%;
+  }
+
+  .grid_service {
+    justify-content      : center;
+    grid-template-columns: repeat(1, 95%);
+    grid-template-rows   : repeat(6, auto);
+    grid-row-gap         : 10vh;
+
+    margin-bottom: 0%;
+  }
+
+  .grid_adress {
+    display              : grid;
+    justify-content      : center;
+    grid-template-columns: repeat(1, 90%);
+    grid-template-rows   : repeat(6, 50vh);
+    grid-column-gap      : -20px;
+    margin-bottom        : 15%;
+  }
+
+  .service1 {
+    min-height: 255px;
+    min-width : 330px;
+    max-width : 455px;
+  }
+
+  .service2 {
+    min-height: 255px;
+    min-width : 330px;
+    max-width : 455px;
+  }
+
+  .service3 {
+    min-height: 255px;
+    min-width : 330px;
+    max-width : 455px;
   }
 
   .au_photo {
@@ -722,11 +782,14 @@ footer {
   }
 
   h3 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   h4 {
     font-size: 18px;
+  }
+  .p_adress{
+    font-size: 12px;
   }
 
   .w70 {
@@ -763,6 +826,7 @@ footer {
   .btn_fs {
     font-size: 12px !important;
   }
+
 
 }
 
